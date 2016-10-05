@@ -6,12 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="../styles/normalize.css">
   <link rel="stylesheet" href="../styles/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/buzz/1.1.0/buzz.min.js"></script>
 </head>
-<body>
-  <h1>Go Hawks!</h1>
-  <script src="../scripts/app.js"></script>
+<body ng-controller="MainCtrl">
+  <h1 class="status" ng-hide="onBreak">Working!</h1>
+  <h1 class="status" ng-show="onBreak">On Break!</h1>
+  <div class="timer">{{ timer }}</div>
+  <button class="start-reset-button" ng-click="startResetToggle()">{{ startResetButtonText }}</button><br>
   <!-- Angular -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+  <!-- ui router -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
   <!-- Firebase -->
   <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
   <!-- AngularFire -->
@@ -25,6 +30,9 @@
       storageBucket: '<your-storage-bucket>'
     };
     firebase.initializeApp(config);
-</script>
+  </script>
+  <script src="../scripts/app.js"></script>
+  <script src="../scripts/services/Timer.js"></script>
+  <script src="../scripts/controllers/MainCtrl.js"></script>
 </body>
 </html>

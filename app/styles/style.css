@@ -1,0 +1,30 @@
+.timer {
+  height: 62px;
+  width: 100px;
+  font-size: 60px;
+}
+
+.start-reset-button {
+  height: 50px;
+  width: 150px;
+  background-color: #888;
+  color: #fff;
+  border-radius: 2px;
+  text-align: center;
+  font-size: 30px;
+  margin-top: 5px;
+  padding-top: 15px;
+}
+
+
+.start-reset-break-button {
+  height: 50px;
+  width: 150px;
+  background-color: #888;
+  color: #fff;
+  border-radius: 2px;
+  text-align: center;
+  font-size: 30px;
+  margin-top: 5px;
+  padding-top: 15px;
+}
