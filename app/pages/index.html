@@ -9,10 +9,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/buzz/1.1.0/buzz.min.js"></script>
 </head>
 <body ng-controller="MainCtrl">
-  <h1 class="status" ng-hide="onBreak">Working!</h1>
-  <h1 class="status" ng-show="onBreak">On Break!</h1>
-  <div class="timer">{{ timer }}</div>
-  <button class="start-reset-button" ng-click="startResetToggle()">{{ startResetButtonText }}</button><br>
+  <h1 class="status" ng-hide="timerService.onBreak">Working!</h1>
+  <h1 class="status" ng-show="timerService.onBreak">On Break!</h1>
+  <div class="timer">{{ timerService.timer }}</div>
+  <button class="start-reset-button" ng-click="timerService.startResetToggle()">{{ timerService.startResetButtonText }}</button><br>
   <!-- Angular -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
   <!-- ui router -->
@@ -32,7 +32,7 @@
     firebase.initializeApp(config);
   </script>
   <script src="../scripts/app.js"></script>
-  <script src="../scripts/services/Timer.js"></script>
+  <script src="../scripts/services/TimerService.js"></script>
   <script src="../scripts/controllers/MainCtrl.js"></script>
 </body>
 </html>
