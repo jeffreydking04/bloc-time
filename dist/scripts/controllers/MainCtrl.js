@@ -1,22 +1,10 @@
 (function() {
-  function MainCtrl($scope, TimerService, $firebaseArray) {
+  function MainCtrl($scope, TimerService, Tasks, $firebaseArray) {
     $scope.timerService = TimerService;
-   // $scope.tasks = Tasks;
-    
-    var ref = firebase.database().ref().child("tasks");
-    var list = $firebaseArray(ref);
-    $scope.task = {jd: ""};
-    $scope.add = function() {
-       list.$add($scope.task);
-    };
-    
-    list.$remove(list[0]);
-   
-    
-    $scope.list = list;
+    $scope.tasks = Tasks;
 };
 
   angular
     .module('blocTime')
-    .controller('MainCtrl', ['$scope', 'TimerService', '$firebaseArray', MainCtrl]);
+    .controller('MainCtrl', ['$scope', 'TimerService', 'Tasks', '$firebaseArray', MainCtrl]);
 })();
