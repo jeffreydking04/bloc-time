@@ -23,7 +23,7 @@
       <input type="submit" value="Save">
     </div>
   </form>
-  <li ng-repeat="item in tasks.tasks">{{ item.task }}</li>
+  <li ng-repeat="item in tasks.tasks | orderBy : created_at : true">{{ item.task }}</li>
   <!-- Angular -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
   <!-- ui router -->
