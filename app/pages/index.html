@@ -13,26 +13,39 @@
   <h1 class="status" ng-show="timerService.onBreak">On Break!</h1>
   <div class="timer">{{ timerService.timer }}</div>
   <button class="start-reset-button" ng-click="timerService.startResetToggle()">{{ timerService.startResetButtonText }}</button><br>
+  <!-- Tasks -->
+  <form ng-submit="add()">
+    <div>
+      <label>Task:</label>
+      <input type="text" ng-model="task">
+    </div>
+    <div>
+      <input type="submit" value="Save">
+    </div>
+  </form>
+  <li ng-repeat="item in list">{{ item.jd }}</li>
   <!-- Angular -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
   <!-- ui router -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
   <!-- Firebase -->
-  <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.4.1/firebase.js"></script>
   <!-- AngularFire -->
   <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
   <script>
-  // Initialize the Firebase SDK
+    // Initialize Firebase
     var config = {
-      apiKey: '<your-api-key>',
-      authDomain: '<your-auth-domain>',
-      databaseURL: '<your-database-url>',
-      storageBucket: '<your-storage-bucket>'
+      apiKey: "AIzaSyCHb8SLL9fmK10_BzafmuuUPHvo9E6JV8M",
+      authDomain: "bloc-time-b4e6a.firebaseapp.com",
+      databaseURL: "https://bloc-time-b4e6a.firebaseio.com",
+      storageBucket: "bloc-time-b4e6a.appspot.com",
+      messagingSenderId: "208911209424"
     };
     firebase.initializeApp(config);
   </script>
   <script src="../scripts/app.js"></script>
   <script src="../scripts/services/TimerService.js"></script>
   <script src="../scripts/controllers/MainCtrl.js"></script>
+  <script src="../scripts/services/Tasks.js"></script>
 </body>
 </html>
