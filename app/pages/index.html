@@ -9,21 +9,25 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/buzz/1.1.0/buzz.min.js"></script>
 </head>
 <body ng-controller="MainCtrl">
-  <h1 class="status" ng-hide="timerService.onBreak">Working!</h1>
-  <h1 class="status" ng-show="timerService.onBreak">On Break!</h1>
-  <div class="timer">{{ timerService.timer }}</div>
-  <button class="start-reset-button" ng-click="timerService.startResetToggle()">{{ timerService.startResetButtonText }}</button><br>
-  <!-- Tasks -->
-  <form ng-submit="tasks.add()">
-    <div>
-      <label>Task:</label>
-      <input type="text" ng-model="tasks.newTask.task" placeholder="Enter completed task">
-    </div>
-    <div>
-      <input type="submit" value="Save">
-    </div>
-  </form>
+  <div class="task-list">
+    <form ng-submit="tasks.add()">
+      <div>
+        <label style="color: #69be28;">Task:</label>
+        <input type="text" ng-model="tasks.newTask.task" placeholder="Enter completed task">
+      </div>
+      <div>
+        <input type="submit" value="Save">
+      </div>
+    </form>
   <li ng-repeat="item in tasks.tasks | orderBy : created_at : true">{{ item.task }}</li>
+  </div>
+  <div class="main-container">
+    <div class="timer-container">
+      <div class="timer">{{ timerService.timer }}</div>
+      <button class="start-reset-button" ng-click="timerService.startResetToggle()">{{ timerService.startResetButtonText }}</button><br>
+    <!-- Tasks -->
+    </div>  
+  </div>
   <!-- Angular -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
   <!-- ui router -->
