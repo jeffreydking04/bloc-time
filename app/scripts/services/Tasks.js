@@ -1,16 +1,34 @@
 (function() {
   function Tasks($firebaseArray) {
-    var Tasks = {};
-    var ref = firebase.database().ref().child("tasks");
-    var tasksArray = $firebaseArray(ref);
+    var tasks;
+
+    var init = function() {
+      tasks = $firebaseArray(firebase.database().ref().child("tasks"));
+    };
     
-    Tasks.add = function() {
-       tasksArray.$add(Tasks.newTask);
+    var addTask = function(task) {
+      tasks.$add(task);
     };
 
-    Tasks.tasks = tasksArray;
+    var removeTask = function(task) {
+      tasks.$remove(task);
+    };
 
-    return Tasks;
+    var newTask = function() {
+      return {
+        title: "",
+        timestamp: firebase.database.ServerValue.TIMESTAMP
+      };
+    };
+
+    init();
+
+    return {
+      all: tasks,
+      new: newTask,
+      add: addTask,
+      remove: removeTask
+    };
   }
 
   angular
