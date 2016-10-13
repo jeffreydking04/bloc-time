@@ -1,20 +1,14 @@
 .task-list {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 80%;
-  background-color: #a5acaf;
+  background-color: #002244;
   padding: 1rem;
-  color: #002244;
+  color: #fff;
+  position:relative;
+  height: 100vh;
 }
 
 .main-container {
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 20%;
-  position: absolute;
+  position: relative;
+  min-height: 15rem;
 }
 
 .timer-container {
@@ -60,4 +54,55 @@
   font-size: 30px;
   margin-top: 5px;
   padding-top: 15px;
+}
+
+.task-heading {
+  color: #69be28;
+  font-size: 2rem;
+  margin-bottom: .5rem;
+}
+
+#new-task-input-box {
+  width: 98%;
+  border-radius: 5px;
+  margin-top: .3rem;
+  height: 1.5rem;
+  padding-left: .5rem;
+}
+
+.my-button {
+  min-width: 4rem;
+  max-width: 4rem;
+  background-color: #a5acaf;
+  width: 20%;
+  color: #000;
+  border-color: #a5acaf;
+}
+
+.my-button:hover {
+  background-color: #900;
+  border-color: #900;
+  color: #fff;
+}
+
+.task-item-field {
+  margin-top: .5rem;
+}
+
+@media (min-width: 1024px) {
+  .task-list {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 80%;
+  }
+
+  .main-container {
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 20%;
+    position: absolute;
+  }
 }
