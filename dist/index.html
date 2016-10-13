@@ -14,16 +14,16 @@
   <div class="timer">{{ timerService.timer }}</div>
   <button class="start-reset-button" ng-click="timerService.startResetToggle()">{{ timerService.startResetButtonText }}</button><br>
   <!-- Tasks -->
-  <form ng-submit="tasks.add()">
+  <form ng-submit="addTask(newTask)">
     <div>
       <label>Task:</label>
-      <input type="text" ng-model="tasks.newTask.task" placeholder="Enter completed task">
+      <input type="text" ng-model="newTask.title" placeholder="Enter completed task">
     </div>
     <div>
       <input type="submit" value="Save">
     </div>
   </form>
-  <li ng-repeat="item in tasks.tasks | orderBy : created_at : true">{{ item.task }}</li>
+  <li ng-repeat="task in tasks | orderBy : created_at : true">{{ task.title }} <button ng-click="removeTask(task)">Delete</button></li>
   <!-- Angular -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
   <!-- ui router -->
